@@ -24,27 +24,27 @@ def my_form_post():
           api_server='https://api.use1a1.rockset.com')
     year = request.form['variable']
     # retrieve Most Popular Movies
-    qlambda1 = rs.QueryLambda.retrieve(
+    qlambda1 = rs.QueryLambda.retrieveByTag(
         '1_most_popular_movies_v1',
-        version='5d8550b3715b792d',
+        tag='latest',
         workspace='commons')
 
     # retreive Highest Grossing Movies
-    qlambda2 = rs.QueryLambda.retrieve(
+    qlambda2 = rs.QueryLambda.retrieveByTag(
         '2_highest_grossing_movies_v1',
-        version='b93d66b47afa985a',
+        tag='latest',
         workspace='commons')
 
     # retrieve Most Popular Genre
-    qlambda3 = rs.QueryLambda.retrieve(
+    qlambda3 = rs.QueryLambda.retrieveByTag(
         '3_most_popular_genres_v1',
-        version='f7d2fecb99564cbf',
+        tag='latest',
         workspace='commons')
 
     # retrieve Largest Producers
-    qlambda4 = rs.QueryLambda.retrieve(
+    qlambda4 = rs.QueryLambda.retrieveByTag(
         '4_most_popular_genres_v1',
-        version='cf1873eef4391a0a',
+        tag='latest',
         workspace='commons')
 
     params = ParamDict()

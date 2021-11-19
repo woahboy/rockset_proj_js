@@ -18,9 +18,9 @@ rs = Client(api_key= args["api_key"],
           api_server='https://api.use1a1.rockset.com')
 
 # retrieve Most Popular Movies
-qlambda = rs.QueryLambda.retrieve(
+qlambda = rs.QueryLambda.retrieveByTag(
     '1_most_popular_movies_v1',
-    version='5d8550b3715b792d',
+    tag='latest',
     workspace='commons')
 
 params = ParamDict()
@@ -32,9 +32,9 @@ pp.pprint(results["results"])
 print(" ")
 
 # retrieve Highest Grossing Movies
-qlambda = rs.QueryLambda.retrieve(
+qlambda = rs.QueryLambda.retrieveByTag(
     '2_highest_grossing_movies_v1',
-    version='b93d66b47afa985a',
+    tag='latest',
     workspace='commons')
 
 params = ParamDict()
@@ -46,9 +46,9 @@ pp.pprint(results["results"])
 print(" ")
 
 # retrieve Most Popular Genre
-qlambda = rs.QueryLambda.retrieve(
+qlambda = rs.QueryLambda.retrieveByTag(
     '3_most_popular_genres_v1',
-    version='f7d2fecb99564cbf',
+    tag='latest',
     workspace='commons')
 
 params = ParamDict()
@@ -60,9 +60,9 @@ pp.pprint(results["results"])
 print(" ")
 
 # retrieve Largest Producers
-qlambda = rs.QueryLambda.retrieve(
+qlambda = rs.QueryLambda.retrieveByTag(
     '4_most_popular_genres_v1',
-    version='cf1873eef4391a0a',
+    tag='latest',
     workspace='commons')
 
 params = ParamDict()
